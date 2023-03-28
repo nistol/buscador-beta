@@ -1,0 +1,161 @@
+
+<h1>Agregar / Modificar Telefonos</h1>
+ <h3>Celulares</h3>
+<div class="container formopi">
+    <form action="/users/modificar" method="post">
+      <input type="hidden" value="{{telefonos.id}}" id="" name="id" />
+      <input type="hidden" value="{{telefonos.dni}}" id="" name="dni" />
+      <div class="col-5">
+        <label for="celular1" class="form-label opi">Celular 1</label>
+        <input
+          type="text"
+          class="form-control"
+          value="{{telefonos.telefono01}}"
+          id="celular1"
+          name="celular1"
+          placeholder="Modifique celular 1 aqui"
+        />
+
+      </div>
+      <div class="col-5">
+        <label for="celular2" class="form-label opi">Celular 2</label>
+        <input
+          type="text"
+          value="{{telefonos.telefono02}}"
+          class="form-control"
+          id="celular2"
+          name="celular2"
+          placeholder="Modifique Celular 2 aqui"
+        />
+      </div>
+      <div class="col-5">
+        <label for="celular3" class="form-label opi">Celular 3</label>
+        <input
+          type="text"
+          value="{{telefonos.telefono03}}"
+          class="form-control"
+          id="celular3"
+          name="celular3"
+          placeholder="Modifique Celular 3 aqui"
+        />
+      </div>
+      <div class="col-5">
+        <label for="celular4" class="form-label opi">Celular 4</label>
+        <input
+          type="text"
+          value="{{telefonos.telefono04}}"
+          class="form-control"
+          id="celular4"
+          name="celular4"
+          placeholder="Modifique Celular 4 aqui"
+        />
+      </div>
+      <div class="col-5">
+        <label for="celular5" class="form-label opi">Celular 5</label>
+        <input
+          type="text"
+          value="{{telefonos.telefono05}}"
+          class="form-control"
+          id="celular5"
+          name="celular5"
+          placeholder="Modifique Celular 5 aqui"
+        />
+      </div>
+      <h3>Fijos</h3>
+      <div class="col-5">
+        <label for="fijo1" class="form-label opi">Fijo 1</label>
+        <input
+          type="text"
+          class="form-control"
+          value="{{telefonos.fijo01}}"
+          id="fijo1"
+          name="fijo1"
+          placeholder="Modifique Fijo 1 aqui"
+        />
+
+      </div>
+      <div class="col-5">
+        <label for="fijo2" class="form-label opi">fijo 2</label>
+        <input
+          type="text"
+          value="{{telefonos.fijo02}}"
+          class="form-control"
+          id="fijo2"
+          name="fijo2"
+          placeholder="Modifique fijo 2 aqui"
+        />
+      </div>
+      <div class="col-5">
+        <label for="fijo3" class="form-label opi">fijo 3</label>
+        <input
+          type="text"
+          value="{{telefonos.fijo03}}"
+          class="form-control"
+          id="fijo3"
+          name="fijo3"
+          placeholder="Modifique fijo 3 aqui"
+        />
+      </div>
+      <div class="col-5">
+        <label for="fijo4" class="form-label opi">Fijo 4</label>
+        <input
+          type="text"
+          value="{{telefonos.fijo04}}"
+          class="form-control"
+          id="fijo4"
+          name="fijo4"
+          placeholder="Modifique Fijo 4 aqui"
+        />
+      </div>
+      <div class="col-5">
+        <label for="fijo5" class="form-label opi">fijo 5</label>
+        <input
+          type="text"
+          value="{{telefonos.fijo05}}"
+          class="form-control"
+          id="fijo5"
+          name="fijo5"
+          placeholder="Modifique fijo 5 aqui"
+        />
+      </div>
+         <h3>Mails</h3> 
+         <div class="col-5">
+        <label for="Mail1" class="form-label opi">Mail 1</label>
+        <input
+          type="text"
+          value="{{telefonos.mail01}}"
+          class="form-control"
+          id="Mail1"
+          name="Mail1"
+          placeholder="Modifique Mail 1 aqui"
+        />
+      </div>
+      <div class="col-5">
+        <label for="Mail2" class="form-label opi">Mail 2</label>
+        <input
+          type="text"
+          value="{{telefonos.mail02}}"
+          class="form-control"
+          id="Mail2"
+          name="Mail2"
+          placeholder="Modifique Mail 2 aqui"
+        />
+      </div>
+      <div class="col-5">
+        <label for="Mail3" class="form-label opi">Mail 3</label>
+        <input
+          type="text"
+          value="{{telefonos.mail03}}"
+          class="form-control"
+          id="Mail3"
+          name="Mail3"
+          placeholder="Modifique Mail 3 aqui"
+        />
+      </div>
+      <br><br>
+      <center><button type="submit" class="btn btn-primary"><a href="/users/{{telefonos.dni}}"></a> Guardar</button></center>
+    </form>
+   {{#if error}}
+    <p>{{message}}</p>
+    {{/if}}
+</div>

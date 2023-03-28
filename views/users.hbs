@@ -1,0 +1,139 @@
+<h2 class="usuario">Hola {{persona}}!!</h2>
+<div class="container , formulario">
+  <form action="/users" method="post">
+  <div class="mb-3">
+    <label for="inputdni" class="form-label">Ingrese Numero de documento</label>
+    <input type="text" class="form-control" id="inputdni" placeholder="Ingrese documento" name="documento"> 
+    <div class="d-grid gap-2 col-6 mx-auto">
+  <button class="btn btn-primary boton" id="enviar" type="submit" type="button">Enviar</button>
+</div> 
+ {{#if error}}
+     <p>La persona no tiene datos</p>
+ {{/if}}
+      </div>
+{{#if documento }}
+<h2 class="encabezados">Informe de {{nombre}}</h2>
+<br><br>
+<div class="tabla">
+<table class="table table-hover">
+  <thead>
+    <tr class="tr">
+      <th scope="col">TIPO DE TELEFONO</th>
+      <th scope="col">Telefono 1</th>
+      <th scope="col">Telefono 2</th>
+      <th scope="col">Telefono 3</th>
+      <th scope="col">Telefono 4</th>
+      <th scope="col">Telefono 5</th>
+      <th scope="col"><a class="btn btn-success" href="/users/modificar/{{id}}"><i class="bi bi-plus" aria-hidden="true">Agregar/Editar</i></a> </th>
+    </tr>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CELULAR</td>
+      <td>{{telefono01}} {{#if telefono01}}<a href="https://api.whatsapp.com/send?phone=549{{telefono01}}&text=Hola+esto+es+una+prueba" target="_blank"><img class="whatsapp"src="/images/whatsppicon.png" alt=""></a> <a class="btn btn-secondary" href="/users/eliminar/telefono01/{{id}}/{{documento}}"><i class="bi bi-trash" aria-hidden="true"></i></a> {{/if}} </td>
+      <td>{{telefono02}} {{#if telefono02}} <a href="https://api.whatsapp.com/send?phone=549{{telefono02}}&text=Hola+esto+es+una+prueba" target="_blank"><img class="whatsapp"src="/images/whatsppicon.png" alt=""></a> <a class="btn btn-secondary" href="/users/eliminar/telefono02/{{id}}/{{documento}}"><i class="bi bi-trash" aria-hidden="true"></i></a>{{/if}}</td>
+      <td>{{telefono03}} {{#if telefono03}} <a href="https://api.whatsapp.com/send?phone=549{{telefono03}}&text=Hola+esto+es+una+prueba" target="_blank"><img class="whatsapp"src="/images/whatsppicon.png" alt=""></a> <a class="btn btn-secondary" href="/users/eliminar/telefono03/{{id}}/{{documento}}"><i class="bi bi-trash" aria-hidden="true"></i></a>{{/if}}</td>
+      <td>{{telefono04}} {{#if telefono04}}<a href="https://api.whatsapp.com/send?phone=549{{telefono04}}&text=Hola+esto+es+una+prueba" target="_blank"><img class="whatsapp"src="/images/whatsppicon.png" alt=""></a><a class="btn btn-secondary" href="/users/eliminar/telefono04/{{id}}/{{documento}}"><i class="bi bi-trash" aria-hidden="true"></i></a>{{/if}}</td>
+      <td>{{telefono05}}{{#if telefono05}} <a href="https://api.whatsapp.com/send?phone=549{{telefono05}}&text=Hola+esto+es+una+prueba" target="_blank"><img class="whatsapp"src="/images/whatsppicon.png" alt=""></a> <a class="btn btn-secondary" href="/users/eliminar/telefono05/{{id}}/{{documento}}"><i class="bi bi-trash" aria-hidden="true"></i></a>{{/if}}</td>
+    </tr>
+  </tbody>
+  </table>
+</div>
+<div class="tabla">
+<table class="table table-hover">
+  <thead>
+    <tr class="tr">
+      <th scope="col">TIPO DE TELEFONO</th>
+      <th scope="col">Telefono 1</th>
+      <th scope="col">Telefono 2</th>
+      <th scope="col">Telefono 3</th>
+      <th scope="col">Telefono 4</th>
+      <th scope="col">Telefono 5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FIJO</td>
+      <td>{{fijo01}} {{#if fijo01}}<a class="btn btn-secondary" href="/users/eliminar/fijo01/{{id}}/{{documento}}"><i class="bi bi-trash" aria-hidden="true"></i></a>{{/if}}</td>
+      <td>{{fijo02}}{{#if fijo02}}<a class="btn btn-secondary" href="/users/eliminar/fijo02/{{id}}/{{documento}}"><i class="bi bi-trash" aria-hidden="true"></i></a>{{/if}}</td>
+      <td>{{fijo03}}{{#if fijo03}}<a class="btn btn-secondary" href="/users/eliminar/fijo03/{{id}}/{{documento}}"><i class="bi bi-trash" aria-hidden="true"></i></a>{{/if}}</td>
+      <td>{{fijo04}}{{#if fijo04}}<a class="btn btn-secondary" href="/users/eliminar/fijo04/{{id}}/{{documento}}"><i class="bi bi-trash" aria-hidden="true"></i></a>{{/if}}</td>
+      <td>{{fijo05}} {{#if fijo05}}<a class="btn btn-secondary" href="/users/eliminar/fijo05/{{id}}/{{documento}}"><i class="bi bi-trash" aria-hidden="true"></i></a>{{/if}}</td>
+    </tr>
+  </tbody>
+  </table>
+</div>
+<div class="tabla">
+<table class="table table-hover">
+  <thead>
+    <tr class="tr">
+      <th scope="col">E-MAIL</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CORREO ELECTRONICO</td>
+      <td>{{mail01}} {{#if mail01}}<a class="btn btn-secondary" href="/users/eliminar/mail01/{{id}}/{{documento}}"><i class="bi bi-trash" aria-hidden="true"></i></a>{{/if}}</td>
+      <td>{{mail02}}{{#if mail02}}<a class="btn btn-secondary" href="/users/eliminar/mail02/{{id}}/{{documento}}"><i class="bi bi-trash" aria-hidden="true"></i></a>{{/if}}</td>
+      <td>{{mail03}}{{#if mail03}}<a class="btn btn-secondary" href="/users/eliminar/mail03/{{id}}/{{documento}}"><i class="bi bi-trash" aria-hidden="true"></i></a>{{/if}}</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+  </table>
+</div>
+
+
+{{/if}}
+{{#if empresa}}
+<h2 class="encabezados">DATOS LABORALES</h2><br><br>
+<div class="tabla">
+<table class="table table-hover">
+  <thead>
+    <tr class="tr">
+      <th scope="col">CUIT</th>
+      <th scope="col">Empresa</th>
+      <th scope="col">Categoria</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">{{cuit}}</td>
+      <td>{{empresa}}</td>
+      <td>{{categoria}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+{{/if}}
+{{#if vehiculo01}}
+<h2 class="encabezados">DATOS VEHICULARES</h2><br><br>
+<div class="tabla">
+<table class="table table-hover">
+  <thead>
+    <tr class="tr">
+      <th scope="col">Vehiculo 1</th>
+      <th scope="col">Vehiculo 2</th>
+      <th scope="col">Vehiculo 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">{{vehiculo01}}</td>
+      <td>{{vehiculo02}}</td>
+      <td>{{vehiculo03}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+{{/if}}
+<a class="btn btn-danger"href="/users/logout">Cerrar Sesion <i class="fas fa-sign-out-alt"></i></a></p>
+<a class="btn btn-success" href="/users/generar"><i class="bi bi-plus" aria-hidden="true">qr</i></a>
+
